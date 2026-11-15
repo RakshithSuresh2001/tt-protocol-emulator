@@ -1,20 +1,16 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+A small array of programmable state machines drives the I/O pins. Each state machine runs a short program
+(set and wait on pins, shift bits in and out, jump, delay) with its own clock divider and pin mapping, so
+UART, SPI and I2C are implemented as programs rather than fixed hardware. New protocols can be added after
+fabrication by loading new programs.
 
 ## How to test
 
-Explain how to use your project
+Load a program and configuration over the SPI configuration port, then connect the mapped pins to a UART,
+SPI or I2C device and compare the traffic with the expected protocol. Example programs and an assembler are
+in the repository.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None required. Any UART, SPI or I2C device, or a logic analyzer, can be used to observe the protocols.
